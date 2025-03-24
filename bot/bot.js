@@ -5,8 +5,8 @@ const fetch = require('node-fetch')
 const token = 'YOUR_NEW_BOT_TOKEN_HERE'
 const bot = new TelegramBot(token, { polling: true })
 
-// Замени на URL твоего сайта на Render после деплоя
-const siteUrl = 'https://sensitivity-project.onrender.com'
+// Замени на URL твоего проекта на Glitch после создания
+const siteUrl = 'https://your-project-name.glitch.me'
 const apiUrl = `${siteUrl}/api/update-numbers`
 
 bot.onText(/\/start/, msg => {
@@ -27,7 +27,7 @@ bot.on('message', async msg => {
 			body: JSON.stringify({ numbers: text }),
 		})
 		if (response.ok) {
-			bot.sendMessage(chatId, `Чувствительность изменена на сайте: ${text}`)
+			bot.sendMessage(chatId, `Чувствительность изменена на сервере: ${text}`)
 		} else {
 			bot.sendMessage(chatId, 'Чувствительность не изменена. Произошла ошибка.')
 		}

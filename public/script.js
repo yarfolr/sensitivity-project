@@ -1,7 +1,7 @@
 const textarea = document.getElementById('numbers')
 const copyBtn = document.getElementById('copyBtn')
 
-// Загружаем числа из API
+// Загружаем числа с сервера
 fetch('/api/get-numbers')
 	.then(response => response.text())
 	.then(data => {
